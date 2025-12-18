@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Los 53 de Gisela!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .font-elegant { font-family: 'Great Vibes', cursive; }
+        .font-body { font-family: 'Montserrat', sans-serif; }
+        
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)),
+                        url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .gold-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(191, 149, 63, 0.3);
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="font-body overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <div class="animate-float mb-4">
+            <span class="text-gold-500 border-2 border-[#bf953f] px-4 py-1 rounded-full text-sm uppercase tracking-widest">Estás invitado</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl mb-2 font-light">Celebremos la vida de</h2>
+        <h1 class="text-7xl md:text-9xl font-elegant gold-text py-4">Gisela</h1>
+        <div class="mt-4 flex items-center gap-4">
+            <div class="h-[1px] w-12 bg-[#bf953f]"></div>
+            <span class="text-3xl md:text-4xl font-light">53 Años</span>
+            <div class="h-[1px] w-12 bg-[#bf953f]"></div>
+        </div>
+        <a href="#detalles" class="mt-12 bg-[#bf953f] hover:bg-[#aa771c] text-black px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">
+            VER DETALLES
+        </a>
+    </section>
+
+    <!-- Detalles Section -->
+    <section id="detalles" class="py-20 px-6 max-w-4xl mx-auto text-center">
+        <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <!-- Fecha -->
+            <div class="card-glass p-8 rounded-3xl text-center">
+                <i class="far fa-calendar-alt text-4xl mb-4 text-[#fcf6ba]"></i>
+                <h3 class="text-xl font-semibold mb-2 uppercase tracking-wide">Cuándo</h3>
+                <p class="text-gray-300">Sábado, 03 de Enero<br>12:00 Horas</p>
+            </div>
+            <!-- Lugar -->
+            <div class="card-glass p-8 rounded-3xl text-center">
+                <i class="fas fa-map-marker-alt text-4xl mb-4 text-[#fcf6ba]"></i>
+                <h3 class="text-xl font-semibold mb-2 uppercase tracking-wide">Dónde</h3>
+                <p class="text-gray-300">Finca el Maestrio<br>Jalapa</p>
+            </div>
+        </div>
+
+        <!-- Cuenta Regresiva -->
+        <div class="mt-20">
+            <h3 class="text-2xl mb-8 font-light italic">Faltan solo...</h3>
+            <div class="flex justify-center gap-4 md:gap-8" id="countdown">
+                <div class="flex flex-col">
+                    <span id="days" class="text-4xl md:text-6xl font-bold gold-text">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400">Días</span>
+                </div>
+                <div class="flex flex-col">
+                    <span id="hours" class="text-4xl md:text-6xl font-bold gold-text">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400">Hrs</span>
+                </div>
+                <div class="flex flex-col">
+                    <span id="minutes" class="text-4xl md:text-6xl font-bold gold-text">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400">Min</span>
+                </div>
+                <div class="flex flex-col">
+                    <span id="seconds" class="text-4xl md:text-6xl font-bold gold-text">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-400">Seg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section con Formulario -->
+    <section class="bg-white text-black py-20 px-6 text-center">
+        <h2 class="text-5xl font-elegant mb-6 text-gray-900">Confirmación de Asistencia</h2>
+        <p class="max-w-md mx-auto mb-10 text-gray-600 text-lg">
+            Por favor, ayúdanos completando el formulario de asistencia.
+        </p>
+        
+        <div class="max-w-lg mx-auto bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-inner">
+            <div class="mb-8">
+                <i class="fas fa-clipboard-check text-4xl text-blue-600 mb-4"></i>
+                <h4 class="font-bold text-xl mb-2 uppercase">Formulario</h4>
+                <p class="text-sm text-gray-500 italic">Haz clic en el botón para confirmar</p>
+            </div>
+            
+            <a href="https://forms.gle/2xYYi9hCn9TyJYEu5" 
+               target="_blank"
+               class="inline-block w-full bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-700 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                COMPLETAR FORMULARIO <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+            
+            <p class="mt-6 text-xs text-gray-400">
+                Se abrirá en una pestaña nueva para tu comodidad.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-500 text-sm border-t border-gray-800">
+        <p class="mb-2">¡Te esperamos para brindar por estos 53 maravillosos años!</p>
+        <p class="gold-text font-elegant text-2xl">Gisela</p>
+    </footer>
+
+    <script>
+        // Lógica mejorada para la fecha objetivo
+        const getTargetDate = () => {
+            const now = new Date();
+            let year = now.getFullYear();
+            // Creamos la fecha para el 03 de enero a las 12
+            let target = new Date(`January 03, ${year} 12:00:00`);
+            
+            // Si la fecha ya pasó este año, apuntamos al año siguiente
+            if (now > target) {
+                target = new Date(`January 03, ${year + 1} 12:00:00`);
+            }
+            return target.getTime();
+        };
+
+        const targetDate = getTargetDate();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            // En el caso improbable de que sea exactamente el momento del evento
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<p class='text-2xl gold-text'>¡Es hoy!</p>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        };
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
